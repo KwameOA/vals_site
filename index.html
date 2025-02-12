@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Be My Valentine?</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: pink;
+            text-align: center;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            padding: 20px;
+        }
+        .container {
+            max-width: 90%;
+            width: 400px;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            min-height: 300px; /* Ensures enough space for all content */
+        }
+        h1 {
+            color: red;
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+        .Queen {
+            width: 100%;
+            max-width: 250px;
+            height: auto;
+            margin-top: 10px;
+            object-fit: contain;
+        }
+        .message {
+            font-size: 18px;
+            color: black;
+            margin-top: 15px;
+        }
+        .buttons {
+            margin-top: 25px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+        .btn {
+            font-size: 18px;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+            transition: 0.3s ease-in-out;
+            border-radius: 5px;
+        }
+        .yes {
+            background-color: red;
+            color: white;
+        }
+        .yes:hover {
+            background-color: darkred;
+        }
+        .no {
+            background-color: white;
+            color: red;
+            border: 2px solid red;
+            position: relative;
+        }
+        .no:hover {
+            background-color: lightgray;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 500px) {
+            h1 {
+                font-size: 24px;
+            }
+            .message {
+                font-size: 16px;
+            }
+            .btn {
+                font-size: 16px;
+                padding: 8px 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Diana, Will You Be My Valentine? ❤️</h1>
+        <img src="https://raw.githubusercontent.com/KwameOA/vals_site/main/photo_2025-02-02_09-07-23.jpg" class="Queen" alt="Valentine Image">
+        <p class="message">I can't imagine what my life would be without you and I'm not going to!💖</p>
+        
+        <div class="buttons">
+            <button class="btn yes" onclick="showLove()">Yes!</button>
+            <button class="btn no" onclick="moveNoButton()">No</button>
+        </div>
+    </div>
+
+    <script>
+        function showLove() {
+            document.body.innerHTML = "<h1 style='color:red; text-align:center; font-size:50px;'>Yay! Can't wait for Valentine's! 💕</h1>";
+        }
+
+        function moveNoButton() {
+            let noButton = document.querySelector('.no');
+            let randomX = Math.random() * (window.innerWidth - 100);
+            let randomY = Math.random() * (window.innerHeight - 50);
+            noButton.style.position = 'absolute';
+            noButton.style.left = randomX + 'px';
+            noButton.style.top = randomY + 'px';
+        }
+    </script>
+
+</body>
+</html>
